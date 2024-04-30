@@ -15,7 +15,7 @@ import { OptionsColorScheme } from "./options-color-scheme";
 import { Settings } from "@/app/components/types/settings";
 import { Scrollbar } from "@/app/components/scrollbar";
 import React from "react";
-import { Popover, Slide } from "@mui/material";
+import { Box, Popover, Slide } from "@mui/material";
 
 interface SettingsDrawerProps {
   canReset?: boolean;
@@ -64,8 +64,8 @@ export function SettingsDrawer(props: SettingsDrawerProps): JSX.Element {
         TransitionComponent={Slide} 
         transitionDuration={500} 
         sx={{
-          "& .MuiModal-root-MuiPopover-root": {
-            top: "135px !important"
+          "& .MuiPopover-paper": {
+            top: "100px !important"
           }
         }}
         >
@@ -83,18 +83,22 @@ export function SettingsDrawer(props: SettingsDrawerProps): JSX.Element {
             },
           }}
         >
-          <Typography variant="h6">App Settings</Typography>
+          <Box display="flex" alignItems="center"  justifyContent="space-between" sx={{
+              px: 1,
+              pt: 1,
+            }}>
+          <Typography variant="h6" ml={1.4}>App Settings</Typography>
           <Stack
             alignItems="center"
             direction="row"
             justifyContent="space-between"
-            spacing={3}
+            spacing={2}
             sx={{
-              px: 3,
+              px: 1,
               pt: 2,
             }}
           >
-            <Stack alignItems="center" direction="row" spacing={0.5}>
+            <Stack alignItems="center" direction="row"  justifyContent="space-between" spacing={0.5}>
               <Badge
                 anchorOrigin={{
                   horizontal: "right",
@@ -125,7 +129,8 @@ export function SettingsDrawer(props: SettingsDrawerProps): JSX.Element {
               </IconButton>
             </Stack>
           </Stack>
-          <Stack spacing={5} sx={{ p: 3 }}>
+          </Box>
+          <Stack spacing={3} sx={{ p: 2.5 }}>
             <OptionsColorPreset
               onChange={(value) => {
                 handleFieldUpdate("colorPreset", value);
@@ -145,6 +150,7 @@ export function SettingsDrawer(props: SettingsDrawerProps): JSX.Element {
               value={values.contrast}
             />
           </Stack>
+
           </Scrollbar>
       </Popover>
 
