@@ -7,6 +7,7 @@ import { FeaturedProjects } from "./featured-projects";
 import Service from "./services";
 import MySkills from "./skills";
 import ProfessionalProjects from "./professional-projects";
+import ContactUs from "./contact-us";
 
 export default function Home() {
   return (
@@ -34,6 +35,9 @@ export default function Home() {
           </Grid>
           <Grid xs={12} xl={12} mt={4}>
             <Service/>
+          </Grid>
+          <Grid xs={12} xl={12} mt={4}>
+          <ContactUs/>
           </Grid>
         </Grid>
       </SectionWrapper>

@@ -26,7 +26,6 @@ import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
@@ -34,8 +33,7 @@ import "swiper/css/navigation";
 import "./project.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { MutableRefObject } from 'react';
-
+import { MutableRefObject } from "react";
 
 const fosterProjectTecStack = [
   "React JS",
@@ -56,26 +54,26 @@ export function FeaturedProjects(): JSX.Element {
 
   const onAutoplayTimeLeft = (s: any, time: any, progress: any) => {
     if (progressCircle.current) {
-        // Ensure progress is converted to string
-        progressCircle.current.style.setProperty("--progress", (1 - progress).toString());
+      // Ensure progress is converted to string
+      progressCircle.current.style.setProperty(
+        "--progress",
+        (1 - progress).toString()
+      );
     }
     if (progressContent.current) {
-        // Ensure time is converted to number
-        progressContent.current.textContent = `${Math.ceil(Number(time) / 1000)}s`;
+      // Ensure time is converted to number
+      progressContent.current.textContent = `${Math.ceil(
+        Number(time) / 1000
+      )}s`;
     }
-};
+  };
 
   return (
     <Box mt={4} mb={4}>
-      <Typography variant="h3" color="text.primary">
-        Professional Projects
+      <Typography variant="h3" color="text.primary" mt={2} mb={2}>
+        Featured Projects
       </Typography>
       <Grid container spacing={2}>
-        <Grid item xs={12} xl={12}>
-          <Typography variant="h3" color="text.primary" mt={2} mb={2}>
-            Featured Projects
-          </Typography>
-        </Grid>
         <Grid item xs={12} xl={6}>
           <Typography variant="h6" color="text.primary">
             Personnel Library
@@ -136,29 +134,25 @@ export function FeaturedProjects(): JSX.Element {
             className="mySwiper"
           >
             <SwiperSlide>
-              
-                <Image
-                  src={performanceImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
+              <Image
+                src={performanceImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-                 <Image
-                  src={onboardingDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-                
+              <Image
+                src={onboardingDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              
-                <Image
-                  src={recruitingDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={recruitingDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
           </Swiper>
         </Grid>
@@ -180,58 +174,46 @@ export function FeaturedProjects(): JSX.Element {
             className="mySwiper"
           >
             <SwiperSlide>
-              
-                <Image
-                  src={fosterCarerDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={fosterCarerDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              
-                <Image
-                  src={fosterChildDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={fosterChildDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              
-                <Image
-                  src={fosterSocialWorkerDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={fosterSocialWorkerDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              
-                <Image
-                  src={fosterLadoDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={fosterLadoDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              
-                <Image
-                  src={fosterPerspectiveDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={fosterPerspectiveDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
             <SwiperSlide>
-              
-                <Image
-                  src={fosterAuditorDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              
+              <Image
+                src={fosterAuditorDashboardImg}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
             </SwiperSlide>
           </Swiper>
         </Grid>

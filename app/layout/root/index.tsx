@@ -26,7 +26,7 @@ const SETTINGS_STORAGE_KEY = "app.settings";
 const resetSettings = (): void => {
   try {
     Cookies.remove(SETTINGS_STORAGE_KEY);
-    window.location.reload();
+    // window.location.reload();
   } catch (err) {
     console.error(err);
   }
@@ -35,7 +35,7 @@ const resetSettings = (): void => {
 const updateSettings = (settings: Settings): void => {
   try {
     Cookies.set(SETTINGS_STORAGE_KEY, JSON.stringify(settings));
-    window.location.reload();
+    // window.location.reload();
   } catch (err) {
     console.error(err);
   }

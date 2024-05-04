@@ -4,7 +4,7 @@ import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import { Grid, Button, styled, Typography } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 import Image from "next/image";
 // import logo from "../../assets/svg/logo.svg";
 import Link from "next/link";
@@ -15,8 +15,8 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import { useRouter } from "next/navigation";
-import { Poppins } from "next/font/google";
 import { usePathname } from "next/navigation";
+import { StyledNavLink } from "./navbar-styles";
 
 const navItems = [
   { id: 1, title: "Home", link: "/home" },
@@ -24,8 +24,8 @@ const navItems = [
   { id: 3, title: "Experience", link: "/experience" },
   { id: 4, title: "Projects", link: "/projects" },
   { id: 5, title: "Skills", link: "/skills" },
-  { key: 6, label: "Services", link: "/services" },
-  { key: 7, label: "Contact", link: "/contact" },
+  { id: 6, title: "Services", link: "/services" },
+  { id: 7, title: "Contact Us", link: "/contact" },
 ];
 
 interface Props {
@@ -35,19 +35,12 @@ interface Props {
    */
   window?: () => Window;
 }
-const poppins = Poppins({
-  weight: "400",
-  subsets: ["latin"],
-});
+
 
 const drawerWidth = 240;
 function Header(props: Props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = useState(false);
-  const token =
-    typeof localStorage !== "undefined"
-      ? localStorage.getItem("loginToken") || null
-      : null;
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
@@ -90,7 +83,6 @@ function Header(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    // <AppBar position="static" sx={{ background: "#F7F5ED", boxShadow: "none" }}>
     <Box sx={{ display: "flex" }}>
       <CssBaseline />
       <Box sx={{ width: "100%" }}>
@@ -113,16 +105,16 @@ function Header(props: Props) {
             <Grid
               item
               xs
-              lg={2}
-              xl={2}
+              lg={1}
+              xl={1}
               sx={{ display: { xs: "none", sm: "flex" } }}
             >
               <Link href={"/home"}>Logo</Link>
             </Grid>
             <Grid
               item
-              lg={8}
-              xl={8}
+              lg={10}
+              xl={10}
               sx={{ display: { xs: "none", lg: "flex" } }}
             >
               <Box
@@ -133,34 +125,6 @@ function Header(props: Props) {
                 }}
               >
                 {navItems?.map((item: any) => (
-                  // <Button
-                  //   key={item?.label}
-                  //   // onClick={handleCloseNavMenu}
-                  //   sx={{
-                  //     my: 2,
-                  //     display: "inline-block",
-                  //     fontSize: "18px",
-                  //     fontWeight: "400",
-                  //     position:"relative",
-                  //     "&:hover": {
-                  //       backgroundColor: "transparent", // Change this to your desired hover color
-                  //     },
-                  //   }}
-                  // >
-                  //   <Link
-                  //     href={`${item?.path}`}
-                  //     className="navLinks"
-                  //     style={{
-                  //       color: router === item?.path ? "#FF3B83" : "#2E2E2E",
-                  //       // color: "#ccd6f6",
-                  //       fontWeight: "500",
-                  //       textDecoration: "none",
-                  //     }}
-                  //   >
-                  //     {item?.label}
-                  //   </Link>
-                  // </Button>
-
                   <StyledNavLink
                     key={item.id}
                     href={item.link}
@@ -170,7 +134,7 @@ function Header(props: Props) {
                       variant="body2"
                       fontWeight={pathName.includes(item.link) ? "600" : "500"}
                       color={
-                        pathName.includes(item.link) ? "primary" : "neutral.400"
+                        pathName.includes(item.link) ? "primary" : "neutral.900"
                       }
                     >
                       {item.title}
@@ -206,43 +170,9 @@ function Header(props: Props) {
         </Drawer>
       </nav>
     </Box>
-    // </AppBar>
   );
 }
 
 export default Header;
 
-// Styled  components
 
-const StyledNavLink = styled(Link)(({ theme }) => ({
-  position: "relative",
-  padding: "0px 8px",
-  color: theme.palette.neutral[600],
-  display: "block",
-  borderBottom: "2px solid transparent",
-  textDecoration: "none",
-  textAlign: "center",
-  fontFamily: poppins.style.fontFamily,
-  "&.active::before": {
-    opacity: 1,
-  },
-  "&::before": {
-    content: `""`,
-    opacity: 0,
-    position: "absolute",
-    width: "100%",
-    height: "5px",
-    bottom: "-29px",
-    left: 0,
-    borderTopLeftRadius: "5rem",
-    borderTopRightRadius: "5rem",
-    backgroundColor: theme.palette.primary.main,
-    transition: "opacity .150s",
-  },
-  "&:hover": {
-    color :theme.palette.primary.main,
-    "&::before": {
-      opacity: 1,
-    },
-  },
-}));

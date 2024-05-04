@@ -1,5 +1,5 @@
 "use client";
-import { Box, Button, Divider, Grid, Stack, Typography } from "@mui/material";
+import { Box, Button, Divider, Grid, Stack, Typography ,Theme, useTheme} from "@mui/material";
 import WavingHandIcon from "@mui/icons-material/WavingHand";
 import { TypeAnimation } from "react-type-animation";
 import Image from "next/image";
@@ -9,10 +9,11 @@ import javascriptIcon from '../../../assets/project-images/javascriptIcon.svg';
 import typescriptIcon from '../../../assets/project-images/typescriptIcon.svg';
 import './heros.css'
 export function Hero(): JSX.Element {
+  const theme = useTheme()
   return (
     <Box mt={4} mb={4}>
       <Grid container>
-        <Grid item xs={12} xl={6} sx={{width:"100%"}}>
+        <Grid item xs={12} lg={6} md={6} sm={12} xl={6} sx={{width:"100%"}}>
           <Typography variant="h6" color="text.primary">
             Hi,There <WavingHandIcon />
           </Typography>
@@ -30,7 +31,7 @@ export function Hero(): JSX.Element {
                 800,
               ]}
               speed={30}
-              style={{ fontSize: "2em", color: "#64FFDA" }}
+              style={{color:`${theme.palette.primary.main}`}}
               repeat={Infinity}
             />
           </Box>
@@ -46,8 +47,7 @@ export function Hero(): JSX.Element {
             <Button variant="contained">Hire Me</Button>
           </Stack>
         </Grid>
-        <Divider  sx={{backgroundColor:"red",border:"5px"}}/>
-        <Grid item xs={12} xl={6} sx={{width:"100%"}}>
+        <Grid item xs={12} lg={6} md={6} sm={12} xl={6} sx={{width:"100%"}}>
         <Box className="container">
         <Box className="hero-circle">
         <Image src={reactJsIcon} alt="reactJsIcon" className="inner-img"/>
@@ -75,5 +75,8 @@ export function Hero(): JSX.Element {
 }
 
 // const styles={
-
+//   typeWriterStyle: (theme: Theme) => ({
+//     color: theme.palette.primary.main,
+//     fontSize:"14px",
+//   }),
 // }

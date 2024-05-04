@@ -1,4 +1,52 @@
-import type { Theme } from "@mui/material";
+import { Backdrop, styled } from "@mui/material";
+import { Poppins } from "next/font/google";
+import Link from "next/link";
+
+
+const poppins = Poppins({
+  weight: "400",
+  subsets: ["latin"],
+});
+
+export  const StyledNavLink = styled(Link)(({ theme }) => ({
+  position: "relative",
+  padding: "0px 20px",
+  color: theme.palette.neutral[900],
+  display: "inline-block",
+  textDecoration: "none",
+  textAlign: "center",
+  fontFamily: poppins.style.fontFamily,
+  "&.active::after": {
+    color :theme.palette.primary.main,
+  },
+  "&::after": {
+  content:  `""`,
+  position: "absolute",
+  width: "100%",
+  transform: "scaleX(0)",
+  borderRadius: "5px",
+  height: "3.5px",
+  top: "25px",
+  left: 0,
+  background: theme.palette.primary.main,
+  // transformOrigin: "bottom right",
+  transition: "transform 0.25s ease-out",
+  color :theme.palette.primary.main,
+  },
+  "&:hover": {
+    color :theme.palette.primary.main,
+    // background:"transparent",
+    // BackdropFilter:"blur(10px)",
+    "&::before": {
+      opacity: 1,
+    },
+    "&::after": {
+      transform: "scaleX(1)",
+      transformOrigin: "bottom left",
+      color :theme.palette.primary.main,
+    },
+  },
+}));
 
 export function NavbarStyles(): any {
   return {
