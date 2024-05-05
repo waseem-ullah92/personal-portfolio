@@ -3,8 +3,9 @@ import React, { useState } from "react";
 import { Box, Tabs, Tab, Grid, Typography } from "@mui/material";
 import TechnicalSkills from "./technical-skills";
 import FrameWorksAndLibraries from "./framework-and-libraries";
-import SoftSkills from "./soft-skills";
+import SoftSkills from "./developers-tools";
 import { tabStyles } from "./skills-tabs-styles";
+import DeveloperTools from "./developers-tools";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -15,10 +16,10 @@ const tabsArray = [
   { id: "1", label: "Technical Skills", component: <TechnicalSkills /> },
   {
     id: "2",
-    label: "Fameworks , Libraries & Tools",
+    label: "Fameworks & Libraries",
     component: <FrameWorksAndLibraries />,
   },
-  { id: "3", label: "Soft Skills ", component: <SoftSkills /> },
+  { id: "3", label: "Developer Tools ", component: <DeveloperTools /> },
 ];
 
 function TabPanel(props: TabPanelProps) {

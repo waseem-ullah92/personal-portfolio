@@ -33,7 +33,7 @@ export function tabStyles():any  {
             fontWeight: 600,
             lineHeight: '24px',
             '&._selected': {
-                color: theme.palette.mode === "dark" ? theme.palette.common.white : theme.palette.common.white
+                color: theme.palette.mode === "dark" ? theme.palette.neutral[900] : theme.palette.common.white
             }
         },
     })
