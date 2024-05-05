@@ -1,16 +1,13 @@
 "use client";
-import React, { useRef, useState } from "react";
+import React, { useRef} from "react";
 import {
   Box,
-  Button,
   Grid,
   List,
-  Stack,
   Theme,
   Typography,
 } from "@mui/material";
 // import required modules
-import { EffectCards } from "swiper/modules";
 import Image from "next/image";
 import performanceImg from "../../../assets/project-images/performance-dashboard.svg";
 import onboardingDashboardImg from "../../../assets/project-images/onboardingDashboard.svg";
@@ -30,7 +27,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import "./project.css";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { MutableRefObject } from "react";
@@ -73,12 +69,12 @@ export function FeaturedProjects(): JSX.Element {
       <Typography variant="h3" color="text.primary" mt={2} mb={2}>
         Featured Projects
       </Typography>
-      <Grid container spacing={2}>
-        <Grid item xs={12} xl={6}>
-          <Typography variant="h6" color="text.primary">
+      <Grid container rowSpacing={2} columnSpacing={2}>
+        <Grid item xs={12} xl={5.5}>
+          <Typography variant="h6" color="text.primary" mb={2}>
             Personnel Library
           </Typography>
-          <Typography variant="body1" color="text.primary">
+          <Typography variant="body2" fontWeight="500" color="text.primary">
             Personnel Library is more than just another HR solution – it's your
             strategic partner in achieving HR excellence. Offering cutting-edge
             solutions across Recruitment, Onboarding, Personnel Library is
@@ -117,7 +113,7 @@ export function FeaturedProjects(): JSX.Element {
             </Grid>
           </List>
         </Grid>
-        <Grid item xs={12} xl={6}>
+        <Grid item xs={12} xl={6.5}>
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -125,39 +121,51 @@ export function FeaturedProjects(): JSX.Element {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            pagination={{
-              clickable: true,
-            }}
+            // pagination={{
+            //   clickable: true,
+            // }}
             navigation={false}
             modules={[Autoplay, Pagination, Navigation]}
             onAutoplayTimeLeft={onAutoplayTimeLeft}
             className="mySwiper"
           >
             <SwiperSlide>
-              <Image
-                src={performanceImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={performanceImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={onboardingDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={onboardingDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={recruitingDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={recruitingDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
           </Swiper>
         </Grid>
 
-        <Grid item xs={12} xl={6}>
+        <Grid item xs={12} xl={6.5}>
           <Swiper
             spaceBetween={30}
             centeredSlides={true}
@@ -165,63 +173,87 @@ export function FeaturedProjects(): JSX.Element {
               delay: 2500,
               disableOnInteraction: false,
             }}
-            pagination={{
-              clickable: true,
-            }}
+            // pagination={{
+            //   clickable: true,
+            // }}
             navigation={false}
             modules={[Autoplay, Pagination, Navigation]}
             onAutoplayTimeLeft={onAutoplayTimeLeft}
             className="mySwiper"
           >
             <SwiperSlide>
-              <Image
-                src={fosterCarerDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={fosterCarerDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={fosterChildDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={fosterChildDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={fosterSocialWorkerDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={fosterSocialWorkerDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={fosterLadoDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={fosterLadoDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={fosterPerspectiveDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={fosterPerspectiveDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
             <SwiperSlide>
-              <Image
-                src={fosterAuditorDashboardImg}
-                alt=""
-                style={{ width: "100%", height: "100%" }}
-              />
+              <CustomCard
+                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
+              >
+                <Image
+                  src={fosterAuditorDashboardImg}
+                  alt=""
+                  style={{ width: "100%", height: "100%" }}
+                />
+              </CustomCard>
             </SwiperSlide>
           </Swiper>
         </Grid>
-        <Grid item xs={12} xl={6}>
-          <Typography variant="h6" color="text.primary">
+        <Grid item xs={12} xl={5.5}>
+          <Typography variant="h6" color="text.primary" mb={2}>
             Foster App
           </Typography>
-          <Typography variant="body1" color="text.primary">
+          <Typography variant="body2" fontWeight="500" color="text.primary">
             Foster care is a crucial system providing a secure environment for
             minors who can’t live with their biological families. State-approved
             caregivers, selected through a stringent vetting process, aim to

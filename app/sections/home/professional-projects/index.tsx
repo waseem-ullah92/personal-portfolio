@@ -55,7 +55,7 @@ export default function ProfessionalProjects(): JSX.Element {
             return (
               <Grid item xl={4} xs={12} key={item?.id}>
                 <SwiperSlide style={{ background: "none !important" }}>
-                  <CustomCard sxProps={{ padding: "15px", cursor: "pointer" }}>
+                  <CustomCard sxProps={{ padding: "15px", cursor: "pointer",height:"100%"  }}>
                     <CardMedia>
                       <Image
                         src={item?.image}
@@ -78,7 +78,7 @@ export default function ProfessionalProjects(): JSX.Element {
                       }}
                     >
                       <Box sx={styles.contentStyle}>
-                        <Typography gutterBottom variant="body1">
+                        <Typography gutterBottom variant="h6">
                           {item?.title}
                         </Typography>
                         <Stack direction="row" spacing={2}>
@@ -86,7 +86,7 @@ export default function ProfessionalProjects(): JSX.Element {
                           <OpenInNewIcon sx={{ cursor: "pointer" }} />
                         </Stack>
                       </Box>
-                      <Typography variant="subtitle2" color="text.secondary">
+                      <Typography variant="body2" fontWeight="500" color="text.primary">
                         {item?.projectDescription}
                       </Typography>
                     </CardContent>
