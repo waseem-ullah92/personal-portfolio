@@ -5,7 +5,7 @@ import { Box, Grid, List, Theme, Typography } from "@mui/material";
 import Image from "next/image";
 import CustomCard from "@/app/components/custom-card";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import fosterImg from '../../../assets/project-images/foster.svg'
+import fosterImg from '../../../assets/project-images/foster.png'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { styled } from "@mui/system";
