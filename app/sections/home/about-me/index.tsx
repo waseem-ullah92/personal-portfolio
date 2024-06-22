@@ -12,7 +12,7 @@ import {
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
 import CustomCard from "@/app/components/custom-card";
 import Image from "next/image";
-import aboutMe from '../../../assets/project-images/_9cc1e9bb-9aad-4711-8f73-8b8d3322a71a.jpg'
+import aboutMe from '../../../assets/project-images/about.png'
 
 export function AboutMe(): JSX.Element {
   const styles = aboutStyle();
@@ -30,7 +30,7 @@ export function AboutMe(): JSX.Element {
   ];
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container>
+      <Grid container spacing={2}>
         <Grid item xs={12} xl={6}>
           <Typography mt={2} mb={2}>
             About Me
@@ -51,7 +51,6 @@ export function AboutMe(): JSX.Element {
           <Typography mt={1} mb={2}>
             Here are a few technologies I’ve been working with recently:
           </Typography>
-          <Box >
             <List>
             <Grid container spacing={2}>
               {aboutData?.map((item) => {
@@ -68,11 +67,10 @@ export function AboutMe(): JSX.Element {
               })}
             </Grid>
             </List>
-          </Box>
         </Grid>
-        <Grid item xs={12} xl={6}>
-          <CustomCard>
-            <Image src={aboutMe} alt="about-me" style={{width:"90%", height:"90%"}} priority/>
+        <Grid item xs={12} xl={6} display = 'flex' justifyContent='center'>
+          <CustomCard sxProps={{width:"60%", height:"60%", display:"flex", justifyContent:"center", aligItems:"center"}}>
+            <Image src={aboutMe} alt="about-me" style={{width:"70%", height:"70%"}} priority/>
           </CustomCard>
         </Grid>
       </Grid>

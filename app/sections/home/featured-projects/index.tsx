@@ -5,7 +5,9 @@ import { Box, Grid, List, Theme, Typography } from "@mui/material";
 import Image from "next/image";
 import CustomCard from "@/app/components/custom-card";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import fosterImg from '../../../assets/project-images/foster.png'
+import fosterImg from "../../../assets/project-images/fosterAppImg.svg";
+import plImg from "../../../assets/project-images/personnelLibraryImg.png";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { styled } from "@mui/system";
@@ -125,19 +127,24 @@ export function FeaturedProjects(): JSX.Element {
       <Grid container rowSpacing={2} columnSpacing={2}>
         <Grid item xs={12} xl={5.5}>
           <Typography variant="h6" color="text.primary" mb={2}>
-            Personnel Library
+            Foster App
           </Typography>
           <Typography variant="body2" fontWeight="500" color="text.primary">
-            Personnel Library is more than just another HR solution – it's your
-            strategic partner in achieving HR excellence. Offering cutting-edge
-            solutions across Recruitment, Onboarding, Personnel Library is
-            dedicated to empowering businesses of all sizes. Their mission is
-            clear: to optimize HR processes, nurture talent growth, and drive
-            success. With unparalleled support and expertise, Personnel Library
-            ensures a seamless journey towards unlocking the full potential of
-            your workforce. Revolutionize your HR workflow, bid farewell to
-            manual processes, and welcome automated efficiency with Personnel
-            Library.
+            Foster care is a crucial system providing a secure environment for
+            minors who can’t live with their biological families. State-approved
+            caregivers, selected through a stringent vetting process, aim to
+            create a family-like setting for children’s healthy development. To
+            streamline this process, an innovative app connects governmental and
+            social services with potential caregivers, optimizing communication
+            and collaboration for thoughtful placements. The app also addresses
+            financial aspects, compensating caregivers for their valuable role
+            in providing stability and love. Emphasizing the importance of
+            family units, the app contributes to the broader goal of ensuring
+            that every child in need finds access to a safe and nurturing foster
+            home. Through its efficient coordination and recognition of
+            caregivers’ contributions, the platform enhances the overall foster
+            care experience, prioritizing the well-being of children in
+            challenging circumstances.
           </Typography>
 
           <List>
@@ -167,37 +174,43 @@ export function FeaturedProjects(): JSX.Element {
           </List>
         </Grid>
         <Grid item xs={12} xl={6.5}>
-        <Box>
-            <Image src={fosterImg} alt="Foster App"  style={{ width: "100%", height: "100%" }}/>
-          </Box>
+          {/* <CustomCard> */}
+            <Box>
+              <Image
+                src={fosterImg}
+                alt="Foster App"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Box>
+          {/* </CustomCard> */}
         </Grid>
 
         <Grid item xs={12} xl={6.5}>
-          <Box>
-            <Image src={fosterImg} alt="Foster App"  style={{ width: "100%", height: "100%" }}/>
-          </Box>
-          
+          {/* <CustomCard> */}
+            <Box>
+              <Image
+                src={plImg}
+                alt="Personal Library"
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Box>
+          {/* </CustomCard> */}
         </Grid>
         <Grid item xs={12} xl={5.5}>
           <Typography variant="h6" color="text.primary" mb={2}>
-            Foster App
+            Personnel Library
           </Typography>
           <Typography variant="body2" fontWeight="500" color="text.primary">
-            Foster care is a crucial system providing a secure environment for
-            minors who can’t live with their biological families. State-approved
-            caregivers, selected through a stringent vetting process, aim to
-            create a family-like setting for children’s healthy development. To
-            streamline this process, an innovative app connects governmental and
-            social services with potential caregivers, optimizing communication
-            and collaboration for thoughtful placements. The app also addresses
-            financial aspects, compensating caregivers for their valuable role
-            in providing stability and love. Emphasizing the importance of
-            family units, the app contributes to the broader goal of ensuring
-            that every child in need finds access to a safe and nurturing foster
-            home. Through its efficient coordination and recognition of
-            caregivers’ contributions, the platform enhances the overall foster
-            care experience, prioritizing the well-being of children in
-            challenging circumstances.
+            Personnel Library is more than just another HR solution – it's your
+            strategic partner in achieving HR excellence. Offering cutting-edge
+            solutions across Recruitment, Onboarding, Personnel Library is
+            dedicated to empowering businesses of all sizes. Their mission is
+            clear: to optimize HR processes, nurture talent growth, and drive
+            success. With unparalleled support and expertise, Personnel Library
+            ensures a seamless journey towards unlocking the full potential of
+            your workforce. Revolutionize your HR workflow, bid farewell to
+            manual processes, and welcome automated efficiency with Personnel
+            Library.
           </Typography>
           <List>
             <Grid container spacing={2}>
