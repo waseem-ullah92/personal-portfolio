@@ -77,7 +77,13 @@ export const createComponents = ({ palette }: Config): Components => {
       styleOverrides: {
         input: {
           "&::placeholder": {
-            color: palette.text!.secondary,
+            // color: palette.text!.secondary,
+            color: palette.neutral[400],
+              fontWeight:"400 !important",
+              fontSize:"14px !important",
+              lineHeight:"20px",
+              letterSpacing:"-0.28px",
+              opacity: 1,
           },
         },
       },
@@ -85,15 +91,29 @@ export const createComponents = ({ palette }: Config): Components => {
     MuiFilledInput: {
       styleOverrides: {
         root: {
-          borderColor: palette.neutral[200],
+          borderColor: palette.neutral[300],
+          background:"#fff",
           "&:hover": {
             backgroundColor: palette.action!.hover,
+            borderColor: (palette.primary as PaletteColor).main,
+          },
+          input: {
+            paddingTop:"15px",
+            "&::placeholder": {
+              color: palette.neutral[400],
+              fontWeight:"400 !important",
+              fontSize:"14px !important",
+              lineHeight:"20px",
+              letterSpacing:"-0.28px",
+              opacity: 1,
+              
+            },
           },
           [`&.${filledInputClasses.disabled}`]: {
             backgroundColor: "transparent",
           },
           [`&.${filledInputClasses.focused}`]: {
-            backgroundColor: "transparent",
+            backgroundColor: "#fff",
             borderColor: (palette.primary as PaletteColor).main,
             boxShadow: `${(palette.primary as PaletteColor).main} 0 0 0 2px`,
           },
@@ -128,6 +148,7 @@ export const createComponents = ({ palette }: Config): Components => {
               borderWidth: "3px",
             },
           },
+          
           [`&.${filledInputClasses.error}`]: {
             [`& .${outlinedInputClasses.notchedOutline}`]: {
               borderColor: (palette.error as PaletteColor).main,

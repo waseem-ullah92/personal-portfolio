@@ -10,6 +10,9 @@ import {
   Typography,
 } from "@mui/material";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import CustomCard from "@/app/components/custom-card";
+import Image from "next/image";
+import aboutMe from '../../../assets/project-images/_9cc1e9bb-9aad-4711-8f73-8b8d3322a71a.jpg'
 
 export function AboutMe(): JSX.Element {
   const styles = aboutStyle();
@@ -67,7 +70,11 @@ export function AboutMe(): JSX.Element {
             </List>
           </Box>
         </Grid>
-        <Grid item xs={12} xl={6}></Grid>
+        <Grid item xs={12} xl={6}>
+          <CustomCard>
+            <Image src={aboutMe} alt="about-me" style={{width:"90%", height:"90%"}} priority/>
+          </CustomCard>
+        </Grid>
       </Grid>
     </Box>
   );

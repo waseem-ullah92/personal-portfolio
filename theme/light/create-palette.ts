@@ -15,7 +15,7 @@ export const createPalette = (config: Config): PaletteOptions => {
 
   return {
     common: {
-      white: "#fff",
+      white: "#fffafc",
       black: "#000",
     },
     action: {

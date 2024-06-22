@@ -1,27 +1,14 @@
 "use client";
-import React, { useRef} from "react";
-import {
-  Box,
-  Grid,
-  List,
-  Theme,
-  Typography,
-} from "@mui/material";
+import React, { useRef } from "react";
+import { Box, Grid, List, Theme, Typography } from "@mui/material";
 // import required modules
 import Image from "next/image";
-import performanceImg from "../../../assets/project-images/performance-dashboard.svg";
-import onboardingDashboardImg from "../../../assets/project-images/onboardingDashboard.svg";
-import recruitingDashboardImg from "../../../assets/project-images/recrutingDashboard.svg";
-import fosterCarerDashboardImg from "../../../assets/project-images/foster-carer-dashboard.svg";
-import fosterChildDashboardImg from "../../../assets/project-images/foster-child-dashboard.svg";
-import fosterSocialWorkerDashboardImg from "../../../assets/project-images/foster-social-worker-dashboard.svg";
-import fosterLadoDashboardImg from "../../../assets/project-images/foster-lado-dashboard.svg";
-import fosterPerspectiveDashboardImg from "../../../assets/project-images/perspective-foster-dashboard.svg";
-import fosterAuditorDashboardImg from "../../../assets/project-images/foster-auditor-dashboard.svg";
 import CustomCard from "@/app/components/custom-card";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
+import fosterImg from '../../../assets/project-images/foster.svg'
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { styled } from "@mui/system";
 
 // Import Swiper styles
 import "swiper/css";
@@ -30,6 +17,8 @@ import "swiper/css/navigation";
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { MutableRefObject } from "react";
+import { Rubik_Broken_Fax } from "next/font/google";
+import { transform } from "lodash";
 
 const fosterProjectTecStack = [
   "React JS",
@@ -63,6 +52,70 @@ export function FeaturedProjects(): JSX.Element {
       )}s`;
     }
   };
+
+  const CardContainer = styled(Box)(({ theme }) => ({
+    perspective: "50em",
+    "&:nth-of-type(1)": {
+      "--bi": "repeating-linear-gradient(30deg, #111 0 0.25em, #333 0 1em)",
+    },
+    "&:nth-of-type(2)": {
+      "--bi":
+        "linear-gradient(#555 5em, #0000 3em), linear-gradient(60deg, #880E4F, #1A237E)",
+    },
+  }));
+
+  const Card = styled(Box)(({ theme }) => ({
+    position: "relative",
+    width: "90%",
+    // padding: '3em',
+    color: "#fff",
+    transform: "rotateX(60deg)",
+    transformStyle: "preserve-3d",
+    transition: "transform 1s",
+    display: "flex",
+    alignItems: "center",
+    boxSizing: "content-box",
+    aspectRatio: "16 / 9",
+    border: "1px solid black",
+    borderRadius: "16px",
+    padding: "1rem 3rem",
+    margin: "0 auto",
+  }));
+
+  const Layers = styled(Box)(({ theme }) => ({
+    position: "absolute",
+    left: 0,
+    top: 0,
+    width: "100%",
+    height: "100%",
+    transformStyle: "preserve-3d",
+    zIndex: -1,
+  }));
+
+  const Layer = styled(Box)(({ theme }) => ({
+    position: "absolute",
+    left: 0,
+    top: 0,
+    width: "100%",
+    height: "100%",
+    borderRadius: "1em",
+    backgroundImage: "var(--bi)",
+    transform: "translateZ(var(--tz))",
+    boxShadow: "0 0 0.5em #000d inset",
+    "&:last-child": {
+      boxShadow: "0 0 0.5em #000d inset, 0 0 5px #000",
+    },
+    "&:nth-of-type(1)": { "--tz": "0px" },
+    "&:nth-of-type(2)": { "--tz": "-2px" },
+    "&:nth-of-type(3)": { "--tz": "-4px" },
+    "&:nth-of-type(4)": { "--tz": "-6px" },
+    "&:nth-of-type(5)": { "--tz": "-8px" },
+    "&:nth-of-type(6)": { "--tz": "-10px" },
+    "&:nth-of-type(7)": { "--tz": "-12px" },
+    "&:nth-of-type(8)": { "--tz": "-14px" },
+    "&:nth-of-type(9)": { "--tz": "-16px" },
+    "&:nth-of-type(10)": { "--tz": "-18px" },
+  }));
 
   return (
     <Box mt={4} mb={4}>
@@ -114,140 +167,16 @@ export function FeaturedProjects(): JSX.Element {
           </List>
         </Grid>
         <Grid item xs={12} xl={6.5}>
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            // pagination={{
-            //   clickable: true,
-            // }}
-            navigation={false}
-            modules={[Autoplay, Pagination, Navigation]}
-            onAutoplayTimeLeft={onAutoplayTimeLeft}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={performanceImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={onboardingDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={recruitingDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-          </Swiper>
+        <Box>
+            <Image src={fosterImg} alt="Foster App"  style={{ width: "100%", height: "100%" }}/>
+          </Box>
         </Grid>
 
         <Grid item xs={12} xl={6.5}>
-          <Swiper
-            spaceBetween={30}
-            centeredSlides={true}
-            autoplay={{
-              delay: 2500,
-              disableOnInteraction: false,
-            }}
-            // pagination={{
-            //   clickable: true,
-            // }}
-            navigation={false}
-            modules={[Autoplay, Pagination, Navigation]}
-            onAutoplayTimeLeft={onAutoplayTimeLeft}
-            className="mySwiper"
-          >
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={fosterCarerDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={fosterChildDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={fosterSocialWorkerDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={fosterLadoDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={fosterPerspectiveDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-            <SwiperSlide>
-              <CustomCard
-                sxProps={{ padding: "15px", cursor: "pointer", height: "100%" }}
-              >
-                <Image
-                  src={fosterAuditorDashboardImg}
-                  alt=""
-                  style={{ width: "100%", height: "100%" }}
-                />
-              </CustomCard>
-            </SwiperSlide>
-          </Swiper>
+          <Box>
+            <Image src={fosterImg} alt="Foster App"  style={{ width: "100%", height: "100%" }}/>
+          </Box>
+          
         </Grid>
         <Grid item xs={12} xl={5.5}>
           <Typography variant="h6" color="text.primary" mb={2}>

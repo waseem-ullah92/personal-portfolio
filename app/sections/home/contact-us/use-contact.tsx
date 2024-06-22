@@ -9,14 +9,25 @@ interface ReturnTypes {
 }
 
 const defaultValues = {
-  goalName: "",
+  firstName: "",
+  lastName: "",
+  email: "",
+  phoneNumber: "",
   description: "",
 
 }
 
 const contactUsForm = Yup.object().shape({
-  goalName: Yup.string().trim().
-    required("Field is required").min(4).max(30),
+  firstName: Yup.string().trim().
+    required("Field is required").min(5).max(30),
+    lastName: Yup.string().trim().
+    required("Field is required").min(5).max(30),
+    email: Yup.string().email().trim().
+    required("Field is required"),
+    phoneNumber: Yup.string().trim().
+    required("Field is required"),
+    description: Yup.string().trim().
+    required("Field is required")
 });
 
 export function useContact(): ReturnTypes {

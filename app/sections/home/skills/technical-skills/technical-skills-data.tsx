@@ -1,3 +1,4 @@
+import IconNextjs from '@/app/assets/svg-icons/nextjs-icon';
 import htmlIcon from '../../../../assets/skills-icons/html.svg'
 import cssIcon from '../../../../assets/skills-icons/css.svg'
 import reactIcon from '../../../../assets/skills-icons/react.svg'
@@ -62,13 +63,13 @@ export const technicalSkillsData: ISliderData[] = [
 export interface ITechnicalSkillCardData {
   id: string;
   title: string;
-  imgIcon?:any;
+  imgIcon?: any | string | React.ComponentType;
 }
 export const technicalSkillsCardData: ITechnicalSkillCardData[]=[
   {
     id:"1",
     title:"Next JS",
-    imgIcon:nextIcon,
+    imgIcon:<IconNextjs/>,
   },
   {
     id:"2",
