@@ -78,7 +78,7 @@ export default function ProfessionalProjects(): JSX.Element {
                       }}
                     >
                       <Box sx={styles.contentStyle}>
-                        <Typography gutterBottom variant="h6">
+                        <Typography gutterBottom variant="h4">
                           {item?.title}
                         </Typography>
                         <Stack direction="row" spacing={2}>
@@ -86,7 +86,7 @@ export default function ProfessionalProjects(): JSX.Element {
                           <OpenInNewIcon sx={{ cursor: "pointer" }} />
                         </Stack>
                       </Box>
-                      <Typography variant="body2" fontWeight="500" color="text.primary">
+                      <Typography variant="body2" color="text.primary">
                         {item?.projectDescription}
                       </Typography>
                     </CardContent>

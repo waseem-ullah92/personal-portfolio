@@ -94,7 +94,7 @@ export default function WorkExperience(): JSX.Element {
   const styles = tabsStyles();
   return (
     <Box>
-       <Typography>Where I’ve Worked</Typography>
+       <Typography variant="h2" color="text.primary">Where I’ve Worked</Typography>
       <Grid container spacing={1.5}>
         <Grid item xs={12} xl={3} lg={3.5} md={3.5} width="100%">
           <Box sx={styles.common}>
@@ -110,7 +110,7 @@ export default function WorkExperience(): JSX.Element {
                 <Tab
                   disableRipple
                   key={index}
-                  label={label}
+                  label={<Typography variant="subtitle1" color="text.primary">{label}</Typography>}
                   {...a11yProps(index)}
                   sx={styles.tabStyle}
                 />
@@ -123,12 +123,12 @@ export default function WorkExperience(): JSX.Element {
           <Box sx={styles.common}>
             {workExperienceData?.map((experience, index) => (
               <TabPanel key={index} value={value} index={index}>
-                <Typography variant="h5">{experience.role}</Typography>
-                <Typography variant="body1">{experience.date}</Typography>
+                <Typography variant="h3" color="text.primary">{experience.role}</Typography>
+                <Typography variant="subtitle1" color="text.primary">{experience.date}</Typography>
                 {experience?.experienceDetails.map((detail, i) => (
                   <Box display="flex" justifyContent="start" alignItems='start' flexWrap='nowrap' gap={1.6} key={i}>
                      <PlayArrowIcon sx={styles.iconStyle} />
-                  <Typography variant="body2" paragraph>
+                  <Typography variant="body1" color="text.primary">
                     {detail}
                   </Typography>
                   </Box>

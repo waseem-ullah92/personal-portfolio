@@ -32,10 +32,10 @@ export function AboutMe(): JSX.Element {
     <Box sx={{ flexGrow: 1 }}>
       <Grid container spacing={2}>
         <Grid item xs={12} xl={6}>
-          <Typography mt={2} mb={2}>
+          <Typography variant="h2" color="text.primary" mt={2} mb={2}>
             About Me
           </Typography>
-          <Typography mt={3}>
+          <Typography variant="body1" color="text.primary" mt={3}>
             Hello! I'm Waseem Ullah, a Passionate and result driven Front-End
             Web Developer with a demonstrated history of crafting outstanding
             user experiences using top-notch code in dynamic web applications.
@@ -48,7 +48,7 @@ export function AboutMe(): JSX.Element {
             exceptionally functional user interfaces that elevate the overall
             digital experience.
           </Typography>
-          <Typography mt={1} mb={2}>
+          <Typography variant="body1" color="text.primary" mt={1} mb={2}>
             Here are a few technologies I’ve been working with recently:
           </Typography>
             <List>
@@ -60,7 +60,7 @@ export function AboutMe(): JSX.Element {
                     {/* <ListItemIcon> */}
                       <PlayArrowIcon sx={styles.iconStyle} />
                     {/* </ListItemIcon> */}
-                    <Typography variant="subtitle1" color="text.primary">{item}</Typography>
+                    <Typography variant="subtitle2" color="text.primary">{item}</Typography>
                   </Box>
                   </Grid>
                 )

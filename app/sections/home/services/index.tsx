@@ -41,8 +41,8 @@ export default function Service(): JSX.Element {
                       style={{ width: "100%", height: "100%" }}
                     />
                   </Box>
-                  <Typography variant="h6">{item?.title}</Typography>
-                  <Typography variant="body2" fontWeight="500">{item?.description}</Typography>
+                  <Typography variant="h4" color="text.primary">{item?.title}</Typography>
+                  <Typography variant="body2" color="text.primary">{item?.description}</Typography>
                 </Box>
               </CustomCard>
             </Grid>
