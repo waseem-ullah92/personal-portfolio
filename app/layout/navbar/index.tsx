@@ -83,7 +83,14 @@ function Header(props: Props) {
   const container =
     window !== undefined ? () => window().document.body : undefined;
   return (
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: "flex" ,  position: "sticky",
+      top: "0",
+      zIndex: 1000,
+      transform: "translateZ(0)",
+      webkitBackdropFilter: "saturate(180%) blur(5px)",
+      boxShadow: "inset 0 -1px 0 0 #eaeaea",
+      backdropFilter: "saturate(180%) blur(5px)",
+      background: "hsla(0, 0%, 100%, .8)"}}>
       <CssBaseline />
       <Box sx={{ width: "100%" }}>
         <Toolbar disableGutters>
@@ -122,6 +129,7 @@ function Header(props: Props) {
                   flexGrow: 1,
                   display: "flex",
                   justifyContent: { lg: "center", xl: "center" },
+                  
                 }}
               >
                 {navItems?.map((item: any) => (
