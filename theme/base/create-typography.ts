@@ -28,7 +28,7 @@ export const createTypography = (): TypographyOptions => {
       lineHeight: 1.57,
     },
     h1: {
-      fontWeight: 600,
+      fontWeight: 700,
       fontSize: "6rem",
       lineHeight: 1.2,
     },

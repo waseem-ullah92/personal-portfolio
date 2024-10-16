@@ -1,12 +1,13 @@
 "use client";
-import React, { useRef } from "react";
+import React  from "react";
 import { Box, Grid, List, Theme, Typography } from "@mui/material";
 // import required modules
 import Image from "next/image";
 import CustomCard from "@/app/components/custom-card";
 import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import fosterImg from "../../../assets/project-images/fosterAppImg.svg";
+import fosterImg from "../../../assets/project-images/pl-code.jpg";
 import plImg from "../../../assets/project-images/personnelLibraryImg.png";
+import SimpleGallery from "@/app/components/image-swipe-gallary";
 
 
 const fosterProjectTecStack = [
@@ -19,6 +20,21 @@ const fosterProjectTecStack = [
   "Responsive Design",
   "Product Design",
   "Jira and Bitbucket",
+];
+
+const images = [
+  {
+    largeURL: fosterImg as unknown as string,
+    thumbnailURL: fosterImg as unknown as string,
+    width: 800,
+    height: 600,
+  },
+  {
+    largeURL: plImg as unknown as string,
+    thumbnailURL: plImg as unknown as string,
+    width: 800,
+    height: 600,
+  },
 ];
 
 export function FeaturedProjects(): JSX.Element {
@@ -80,13 +96,7 @@ export function FeaturedProjects(): JSX.Element {
         </Grid>
         <Grid item xs={12} xl={6.5}>
           {/* <CustomCard> */}
-            <Box>
-              <Image
-                src={fosterImg}
-                alt="Foster App"
-                style={{ width: "100%", height: "100%" }}
-              />
-            </Box>
+            <SimpleGallery galleryID="my-test-gallery" images={images}/>
           {/* </CustomCard> */}
         </Grid>
 
